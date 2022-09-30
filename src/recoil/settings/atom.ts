@@ -6,7 +6,7 @@ import {
 } from './types';
 
 const initialState: AtomState = {
-  theme: chainConfig.style.themes.default as Theme,
+  theme: chainConfig.style.defaultTheme as Theme,
   dateFormat: 'locale',
   txListFormat: 'compact',
 };

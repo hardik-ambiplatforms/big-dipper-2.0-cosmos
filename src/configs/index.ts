@@ -23,7 +23,7 @@ const getChainConfig = () => {
 };
 
 const chainConfig = getChainConfig();
-const themeList = chainConfig.style.themes.themeList as Theme[];
+const themeList = chainConfig.style.themeList as Theme[];
 
 export {
   chainConfig,
