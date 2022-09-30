@@ -1,18 +1,16 @@
 import * as R from 'ramda';
 import { ThemeOptions } from '@material-ui/core/styles';
 import { chainConfig } from '@configs';
-import { common } from './theme/index';
+import { common } from './index';
 
 export const makeTemplate = (themeType: string) :ThemeOptions => {
   const [theme] = chainConfig.style.themes.filter((t) => t.type === themeType);
-
   const {
     background, primary, divider, text, fonts,
     primaryData, results, tokenomics, condition, charts,
   } = theme;
 
-  /** Custom theme overrides for light mode */
-  const ThemeOverride = {
+  const Theme = {
     mixins: {
       tableCell: {
         background: background.surfaceOne, // surface one
@@ -110,7 +108,7 @@ export const makeTemplate = (themeType: string) :ThemeOptions => {
     },
   };
 
-  const themeTemplate:ThemeOptions = R.mergeDeepLeft(ThemeOverride, common);
+  const themeTemplate:ThemeOptions = R.mergeDeepLeft(Theme, common);
 
   return themeTemplate;
 };
